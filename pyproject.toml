@@ -1,0 +1,89 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "alogamous"
+dynamic = ["version"]
+description = "A log anomaly detection framework"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "pandas",
+]
+
+[project.urls]
+Documentation = "https://github.com/aquanauts/alogamous"
+Issues = "https://github.com/aquanauts/alogamous/issues"
+Source = "https://github.com/aquanauts/alogamous"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/alogamous/__version__.py"
+
+[tool.hatch.envs.default]
+type = "virtual"
+path = ".venv"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/alogamous tests}"
+
+[tool.hatch.envs.coverage]
+detached = true
+dependencies = [
+  "coverage[toml]>=6.2",
+  "lxml",
+]
+[tool.hatch.envs.coverage.scripts]
+combine = "coverage combine {args}"
+report-xml = "coverage xml"
+report-uncovered-html = "coverage html --skip-covered --skip-empty"
+generate-summary = "python scripts/generate_coverage_summary.py"
+write-summary-report = "python scripts/write_coverage_summary_report.py"
+
+[tool.hatch.envs.pre-commit]
+detached = true
+dependencies = [
+  "pre-commit>=3.7.1"
+]
+[tool.hatch.envs.pre-commit.scripts]
+install = "pre-commit install"
+run = "pre-commit run -av"
+
+[tool.coverage.run]
+source_pkgs = ["alogamous", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/alogamous/__about__.py",
+]
+
+[tool.coverage.paths]
+alogamous = ["src/alogamous", "*/alogamous/src/alogamous"]
+tests = ["tests", "*/alogamous/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
