@@ -6,3 +6,4 @@ From oldest to newest contributor, we would like to thank:
 - [Kit Rady](https://github.com/kitrady)
 - [Kovi Schmader](https://github.com/Rovis27)
 - [Livanur Ozturk] (https://github.com/lozturk25)
+- [Annie Tong](https://github.com/bbqroastcheese)
