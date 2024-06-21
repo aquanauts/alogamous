@@ -37,6 +37,12 @@ pip install alogamous
     hatch --version
     ```
 
+1. Configure hatch
+
+    ```bash
+    hatch config set dirs.env.virtual .venv
+    ```
+
 1. Clone the repo
 
     ```bash

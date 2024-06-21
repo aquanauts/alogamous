@@ -36,10 +36,6 @@ source = "vcs"
 [tool.hatch.build.hooks.vcs]
 version-file = "src/alogamous/__version__.py"
 
-[tool.hatch.envs.default]
-type = "virtual"
-path = ".venv"
-
 [tool.hatch.envs.types]
 extra-dependencies = [
   "mypy>=1.0.0",
@@ -74,7 +70,7 @@ source_pkgs = ["alogamous", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/alogamous/__about__.py",
+  "src/alogamous/__version__.py",
 ]
 
 [tool.coverage.paths]
