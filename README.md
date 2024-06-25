@@ -18,6 +18,7 @@ pip install alogamous
 
 ## Development
 
+### Setup
 1. Open a terminal
 
 1. Install [hatch](https://hatch.pypa.io/latest/)
@@ -30,6 +31,7 @@ pip install alogamous
 1. Restart your terminal
 
     Hatch modifies your system PATH variable, and this won't take effect unless you restart the terminal.
+
 
 1. Make sure hatch works
 
@@ -67,6 +69,17 @@ pip install alogamous
 1. Setup your IDE
 
     ???
+
+### Possible Errors
+
+**Permission Error**
+
+   - Message: *PermissionError: [Errno 13] Permission denied: '/usr/local/hatch/bin/hatch'*
+
+   - Fix by running:
+      ```bash
+      sudo chmod a+r /usr/local/hatch/bin/hatch
+      ```
 
 ## License
 
