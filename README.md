@@ -1,4 +1,4 @@
-# alogamous
+# Alogamous
 
 [![PyPI - Version](https://img.shields.io/pypi/v/alogamous.svg)](https://pypi.org/project/alogamous)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/alogamous.svg)](https://pypi.org/project/alogamous)
@@ -8,6 +8,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
+- [Development](#development)
 - [License](#license)
 
 ## Installation
