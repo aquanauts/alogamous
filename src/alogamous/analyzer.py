@@ -1,11 +1,12 @@
-import sys
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Analyzer(ABC):
+    @abstractmethod
     def read_log_line(self, line):
         pass
 
+    @abstractmethod
     def report(self, out_stream):
         pass
 
