@@ -66,7 +66,16 @@ pip install alogamous
 
 1. Setup your IDE
 
-    ???
+   1. Sign up for a free [JetBrains Educational License](https://www.jetbrains.com/community/education/#students) or buy one
+
+   2. Download [Pycharm](https://www.jetbrains.com/pycharm/download/)
+      - Depending on your platform you may need to download and install [Python](https://www.python.org/)
+
+   3. Open Pycharm
+
+   4. Click Open on the welcome screen and then select the file alogamous
+
+
 
 ## License
 
