@@ -7,9 +7,20 @@
 
 ## Table of Contents
 
+- [Description](#description)
 - [Installation](#installation)
 - [Development](#development)
 - [License](#license)
+
+## Description
+A Python program that can process log files and generate a daily report on anomalies in a set of logs.
+- It should be able to read multiple files and output an html-formatted file.
+- It should have multiple metrics/checks for anomalous log lines.
+- It should be able to take in a log line format so that it knows how to extract useful information from a log line.
+- It should be able to traverse a well-defined file system structure to access all logs.
+- It should be able to generate metrics that span multiple files.
+- It should be well-tested.
+
 
 ## Installation
 
