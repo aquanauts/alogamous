@@ -1,4 +1,4 @@
-# alogamous
+# Alogamous
 
 [![PyPI - Version](https://img.shields.io/pypi/v/alogamous.svg)](https://pypi.org/project/alogamous)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/alogamous.svg)](https://pypi.org/project/alogamous)
@@ -9,6 +9,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
+- [Development](#development)
 - [License](#license)
 
 ## Description
@@ -29,6 +30,7 @@ pip install alogamous
 
 ## Development
 
+### Setup
 1. Open a terminal
 
 1. Install [hatch](https://hatch.pypa.io/latest/)
@@ -41,6 +43,7 @@ pip install alogamous
 1. Restart your terminal
 
     Hatch modifies your system PATH variable, and this won't take effect unless you restart the terminal.
+
 
 1. Make sure hatch works
 
@@ -77,7 +80,27 @@ pip install alogamous
 
 1. Setup your IDE
 
-    ???
+   1. Sign up for a free [JetBrains Educational License](https://www.jetbrains.com/community/education/#students) or buy one
+
+   2. Download [Pycharm](https://www.jetbrains.com/pycharm/download/)
+      - Depending on your platform you may need to download and install [Python](https://www.python.org/)
+
+   3. Open Pycharm
+
+   4. Click Open on the welcome screen and then select the file alogamous
+
+
+
+### Possible Errors
+
+**Permission Error**
+
+   - Message: *PermissionError: [Errno 13] Permission denied: '/usr/local/hatch/bin/hatch'*
+
+   - Fix by running:
+      ```bash
+      sudo chmod a+r /usr/local/hatch/bin/hatch
+      ```
 
 ## License
 
