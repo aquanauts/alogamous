@@ -1,17 +1,27 @@
 import io
 
-from alogamous import analyzer, echo_analyzer
+from alogamous.echo_analyzer import EchoAnalyzer
 
 
 def test_echo_lines():
-    in_stream = io.StringIO("""line1
+    line_echoer = EchoAnalyzer()
+    in_stream = """line1
         line2
-        line3""")
+        line3"""
     out_stream = io.StringIO()
-    analyzer.analyze_log_stream([echo_analyzer.EchoAnalyzer()], in_stream, out_stream)
+
+    line_echoer.read_log_line(in_stream)
+    line_echoer.report(out_stream)
     assert (
         out_stream.getvalue()
         == """line1
         line2
         line3"""
     )
+
+
+def test_echo_no_lines():
+    line_echoer = EchoAnalyzer()
+    out_stream = io.StringIO()
+    line_echoer.report(out_stream)
+    assert out_stream.getvalue() == ""
