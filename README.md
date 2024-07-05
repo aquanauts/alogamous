@@ -108,12 +108,12 @@ For example, we did this with the .idea folder, which is automatically generated
 - Create the gitignore file
    ```bash
   touch .gitignore
-   ```
-- Add the desired file to the gitignore
-   - for example, for the .idea file, we could add it through:
+- Add the current file to the gitignore
    ```bash
-   /.idea
-   ```
+   git add .
+- Add the present file to the gitignore
+   ```bash
+   git commit
 ## License
 
 `alogamous` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
