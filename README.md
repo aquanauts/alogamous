@@ -102,7 +102,7 @@ pip install alogamous
       sudo chmod a+r /usr/local/hatch/bin/hatch
       ```
 
-### Adding to Gitingore
+### Adding to Gitignore
 Gitignore is a way to explicitly tell Git that certain files should not be committed.
 For example, we did this with the .idea folder, which is automatically generated and contains settings that do not need to be committed.
 - Create the gitignore file
