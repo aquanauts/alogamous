@@ -10,4 +10,4 @@ class ErrorCounterAnalyzer(analyzer.Analyzer):
             self.error_number += 1
 
     def report(self, out_stream):
-        out_stream.write("There are " + str(self.error_number) + " error lines in this log")
+        out_stream.write("Number of error lines: " + str(self.error_number))
