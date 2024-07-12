@@ -1,4 +1,4 @@
-from alogamous import analyzer, echo_analyzer, error_counter_analyzer, line_count_analyzer
+from src.alogamous import analyzer, echo_analyzer, error_counter_analyzer, line_count_analyzer, warning_analyzer
 
 with open("../../data/ex_log_01.txt") as log_file, open("../../data/test_output_file.txt", "a") as output_file:
     analyzer.analyze_log_stream(
@@ -6,6 +6,7 @@ with open("../../data/ex_log_01.txt") as log_file, open("../../data/test_output_
             echo_analyzer.EchoAnalyzer(),
             error_counter_analyzer.ErrorCounterAnalyzer(),
             line_count_analyzer.LineCountAnalyzer(),
+            warning_analyzer.WarningAnalyzer(),
         ],
         log_file,
         output_file,
