@@ -101,7 +101,23 @@ pip install alogamous
       ```bash
       sudo chmod a+r /usr/local/hatch/bin/hatch
       ```
-
+### Adding to Gitignore
+Gitignore is a way to explicitly tell Git that certain files should not be committed.
+For example, we did this with the .idea folder, which is automatically generated and contains settings that do not need to be committed.
+- Create the gitignore file
+   ```bash
+  touch .gitignore
+- Add the current file to the gitignore
+   ```bash
+   git add .
+- Commit these changes
+   ```bash
+   git commit
+If you open the .gitignore file, you can add lines directly there as well.
+- If you would like to exclude any file or directory whose name begins with a certain phrase (e.g. "hello."), you can use the pattern of name followed by asterisk (e.g. hello.*)
+- If you would like to match a directory and the paths underneath it, but not a regular file with the same name, you can use the pattern of name followed by forward slash (e.g. foo/)
+- If you would like to include a certain file which has been excluded by a previous pattern, you can use the prefix "!". (Note that it is not possible to re-include a file if a parent directory of that file is excluded)
+- For additional information on gitignore's pattern format and examples, see the [git docs](https://git-scm.com/docs/gitignore)
 ## License
 
 `alogamous` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
