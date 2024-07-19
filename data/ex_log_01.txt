@@ -42,3 +42,4 @@ STARTING Tracking service
 2024-06-20 17:24:34,091 - root - INFO - Closing client connection.
 2024-06-20 17:24:34,092 - root - INFO - Client (0)ui-tracking_service Closed
 2024-06-20 17:25:08,029 - root - ERROR - Exception in message handler <bound method TrackingService.method of <app.tracking_service.TrackingService object at 0x7feba0d0>> TrackingService.on_order_change() missing 1 required positional argument: 'order_identifier'
+Hello I am a bad log line
