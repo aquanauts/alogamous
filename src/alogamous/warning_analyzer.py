@@ -9,8 +9,7 @@ class WarningAnalyzer(analyzer.Analyzer):
         line_list = line.split(" ")
         # List should have format [date, timestamp, -, root, -, log message type, -, first word of message...]
         if line_list[5].lower() == "warning":
-            self.count += (1)
-
+            self.count += 1
 
     def report(self, out_stream):
         if self.count == 0:

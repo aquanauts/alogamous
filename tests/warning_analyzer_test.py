@@ -1,7 +1,7 @@
 import io
 
 from src.alogamous import analyzer, warning_analyzer
-import data
+
 
 def test_warning_count():
     in_stream = io.StringIO("""2024-06-20 11:00:18,185 - root - INFO - Kafka reading from start of day 2024-06-20 05:00:00+00:00 on topic internal from kafka.servers:9092
@@ -14,7 +14,4 @@ def test_warning_count():
 2024-06-20 17:25:08,029 - root - ERROR - Exception in message handler <bound method TrackingService.method of <app.tracking_service.TrackingService object at 0x7feba0d0>> TrackingService.on_order_change() missing 1 required positional argument: 'order_identifier'""")
     out_stream = io.StringIO()
     analyzer.analyze_log_stream([warning_analyzer.WarningAnalyzer()], in_stream, out_stream)
-    assert (
-        out_stream.getvalue()
-        == "\n2 Warnings were detected."
-    )
+    assert out_stream.getvalue() == "\n2 Warnings were detected."
