@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-from enum import StrEnum
 
-
-class LineType(StrEnum):
+class LineType:
     HEADER_LINE = "header line"
     LOG_LINE = "log line"
     UNSTRUCTURED_LINE = "unstructured line"
