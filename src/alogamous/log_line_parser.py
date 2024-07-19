@@ -1,14 +1,16 @@
 from __future__ import annotations
 
+from enum import StrEnum
 
-class LineType:
+
+class LineType(StrEnum):
     HEADER_LINE = "header line"
     LOG_LINE = "log line"
     UNSTRUCTURED_LINE = "unstructured line"
 
 
 class LogLineParser:
-    def __init__(self, header_line: str, expected_fields: list[str], seperator: str):
+    def __init__(self, expected_fields: list[str], seperator: str, header_line: str):
         self.header_line = header_line
         self.expected_fields = expected_fields
         self.separator = seperator
