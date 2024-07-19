@@ -1,4 +1,4 @@
-from src.alogamous import (
+from alogamous import (
     analyzer,
     directory_reader,
     echo_analyzer,

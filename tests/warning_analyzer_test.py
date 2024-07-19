@@ -1,6 +1,6 @@
 import io
 
-from src.alogamous import analyzer, warning_analyzer
+from alogamous import analyzer, warning_analyzer
 
 
 def test_warning_count():

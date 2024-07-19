@@ -1,4 +1,4 @@
-from src.alogamous import analyzer
+from alogamous import analyzer
 
 
 class WarningAnalyzer(analyzer.Analyzer):
