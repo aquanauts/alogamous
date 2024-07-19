@@ -4,8 +4,8 @@ from alogamous import (
     echo_analyzer,
     error_counter_analyzer,
     line_count_analyzer,
+    loginfo_analyzer,
     warning_analyzer,
-    loginfo_analyzer
 )
 
 with open("../../data/test_output_file.txt", "a") as output_file:
@@ -16,7 +16,7 @@ with open("../../data/test_output_file.txt", "a") as output_file:
             error_counter_analyzer.ErrorCounterAnalyzer(),
             line_count_analyzer.LineCountAnalyzer(),
             warning_analyzer.WarningAnalyzer(),
-            loginfo_analyzer.InfoAnalyzer()
+            loginfo_analyzer.InfoAnalyzer(),
         ],
         reader.read(),
         output_file,
