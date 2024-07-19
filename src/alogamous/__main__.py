@@ -13,7 +13,7 @@ from alogamous import (
 
 if len(sys.argv) != int(sys.argv[1]) + 4:
     sys.stdout.write(f"Usage: {sys.argv[0]} <NUM_FIELDS> <FIELD_NAME1> <FIELD_NAME2> ... <SEPARATOR> <HEADER_LINE>")
-    sys.exit(0)
+    sys.exit(1)
 
 expected_fields = sys.argv[2 : int(sys.argv[1]) + 2]
 
