@@ -1,4 +1,4 @@
-from src.alogamous import analyzer, echo_analyzer, error_counter_analyzer, line_count_analyzer, warning_analyzer
+from src.alogamous import directory_reader, analyzer, echo_analyzer, error_counter_analyzer, line_count_analyzer, warning_analyzer
 
 with open("../../data/test_output_file.txt", "a") as output_file:
     reader = directory_reader.DirectoryReader("../../data")
