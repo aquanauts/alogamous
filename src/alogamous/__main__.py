@@ -3,7 +3,6 @@ import sys
 from alogamous import (
     analyzer,
     directory_reader,
-    echo_analyzer,
     error_counter_analyzer,
     line_count_analyzer,
     log_line_parser,
@@ -32,7 +31,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
     line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line)
     analyzer.analyze_log_stream(
         [
-            echo_analyzer.EchoAnalyzer(),
+            # echo_analyzer.EchoAnalyzer(),
             error_counter_analyzer.ErrorCounterAnalyzer(),
             line_count_analyzer.LineCountAnalyzer(),
             warning_analyzer.WarningAnalyzer(),
