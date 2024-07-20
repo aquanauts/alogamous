@@ -1,7 +1,7 @@
 from alogamous import analyzer, log_line_parser
 
 parser = log_line_parser.LogLineParser(
-    "====================================================", ["datetime", "source", "level", "message"], " - "
+    ["datetime", "source", "level", "message"], " - ", "===================================================="
 )
 
 
