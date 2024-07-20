@@ -11,17 +11,22 @@ from alogamous import (
     warning_analyzer,
 )
 
-if len(sys.argv) != int(sys.argv[1]) + 4:
-    sys.stdout.write(f"Usage: {sys.argv[0]} <NUM_FIELDS> <FIELD_NAME1> <FIELD_NAME2> ... <SEPARATOR> <HEADER_LINE>")
+expected_arg_len = 2
+
+if len(sys.argv) != expected_arg_len:
+    sys.stdout.write(f"Usage: {sys.argv[0]} <LOG_CONFIG>")
+    sys.stdout.write("\nPossible LOG_CONFIGS are:")
+    for key in log_line_parser.LOG_FILE_CONFIGS:
+        sys.stdout.write(f"\n- {key}")
     sys.exit(1)
 
-expected_fields = sys.argv[2 : int(sys.argv[1]) + 2]
 
 with open("../../data/test_output_file.txt", "a") as output_file:
     reader = directory_reader.DirectoryReader("../../data")
-    line_parser = log_line_parser.LogLineParser(
-        expected_fields, sys.argv[int(sys.argv[1]) + 2], sys.argv[int(sys.argv[1]) + 3]
-    )
+    expected_fields = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.EXPECTED_FIELDS]
+    seperator = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.SEPERATOR]
+    header_line = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.HEADER_LINE]
+    line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line)
     analyzer.analyze_log_stream(
         [
             echo_analyzer.EchoAnalyzer(),
