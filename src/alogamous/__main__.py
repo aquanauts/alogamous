@@ -8,7 +8,6 @@ from alogamous import (
     line_count_analyzer,
     log_line_parser,
     loginfo_analyzer,
-    warning_analyzer,
 )
 
 expected_arg_len = 2
@@ -19,7 +18,6 @@ if len(sys.argv) != expected_arg_len:
     for key in log_line_parser.LOG_FILE_CONFIGS:
         sys.stdout.write(f"\n- {key}")
     sys.exit(1)
-
 
 with open("../../data/test_output_file.txt", "a") as output_file:
     reader = directory_reader.DirectoryReader("../../data")
@@ -34,7 +32,7 @@ with open("../../data/test_output_file.txt", "a") as output_file:
             echo_analyzer.EchoAnalyzer(),
             error_counter_analyzer.ErrorCounterAnalyzer(),
             line_count_analyzer.LineCountAnalyzer(),
-            warning_analyzer.WarningAnalyzer(),
+            # warning_analyzer.WarningAnalyzer(),
             loginfo_analyzer.InfoAnalyzer(),
         ],
         reader.read(),
