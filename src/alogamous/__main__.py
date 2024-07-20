@@ -31,7 +31,7 @@ with open("../../data/test_output_file.txt", "a") as output_file:
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
             loginfo_analyzer.InfoAnalyzer(),
-            startup_header_analyzer.StartupHeaderAnalyzer(),
+            startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
         ],
         reader.read(),
