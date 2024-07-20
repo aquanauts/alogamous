@@ -23,9 +23,11 @@ if len(sys.argv) != expected_arg_len:
 
 with open("../../data/test_output_file.txt", "a") as output_file:
     reader = directory_reader.DirectoryReader("../../data")
-    expected_fields = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.EXPECTED_FIELDS]
-    seperator = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.SEPERATOR]
-    header_line = log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.HEADER_LINE]
+    expected_fields = list(
+        log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.EXPECTED_FIELDS]
+    )
+    seperator = str(log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.SEPERATOR])
+    header_line = str(log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.HEADER_LINE])
     line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line)
     analyzer.analyze_log_stream(
         [
