@@ -4,9 +4,11 @@ from alogamous import (
     analyzer,
     directory_reader,
     error_counter_analyzer,
+    flag_duplicate_log_messages,
     line_count_analyzer,
     log_line_parser,
     loginfo_analyzer,
+    startup_header_analyzer,
     warning_analyzer,
 )
 
@@ -33,9 +35,11 @@ with open(f"{sys.argv[3]}", "a") as output_file:
         [
             # echo_analyzer.EchoAnalyzer(),
             error_counter_analyzer.ErrorCounterAnalyzer(),
+            flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
-            warning_analyzer.WarningAnalyzer(),
             loginfo_analyzer.InfoAnalyzer(),
+            startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
+            warning_analyzer.WarningAnalyzer(),
         ],
         reader.read(),
         output_file,
