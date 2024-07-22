@@ -3,7 +3,6 @@ import sys
 from alogamous import (
     analyzer,
     directory_reader,
-    echo_analyzer,
     error_counter_analyzer,
     flag_duplicate_log_messages,
     line_count_analyzer,
@@ -13,18 +12,19 @@ from alogamous import (
     warning_analyzer,
 )
 
-expected_arg_len = 2
+expected_arg_len = 4
 
 if len(sys.argv) != expected_arg_len:
-    sys.stdout.write(f"Usage: {sys.argv[0]} <LOG_CONFIG>")
+    sys.stdout.write(f"Usage: {sys.argv[0]} <LOG_CONFIG> <INPUT_DIRECTORY> <OUTPUT_FILE>")
     sys.stdout.write("\nPossible LOG_CONFIGS are:")
     for key in log_line_parser.LOG_FILE_CONFIGS:
         sys.stdout.write(f"\n- {key}")
+    sys.stdout.write("\nINPUT_DIRECTORY must be file path to a directory of log files")
+    sys.stdout.write("\nOUTPUT_FILE must be file path to the file you want the log report written in")
     sys.exit(1)
 
-
-with open("../../data/test_output_file.txt", "a") as output_file:
-    reader = directory_reader.DirectoryReader("../../data")
+with open(f"{sys.argv[3]}", "a") as output_file:
+    reader = directory_reader.DirectoryReader(f"{sys.argv[2]}")
     expected_fields = list(
         log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.EXPECTED_FIELDS]
     )
@@ -33,7 +33,7 @@ with open("../../data/test_output_file.txt", "a") as output_file:
     line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line)
     analyzer.analyze_log_stream(
         [
-            echo_analyzer.EchoAnalyzer(),
+            # echo_analyzer.EchoAnalyzer(),
             error_counter_analyzer.ErrorCounterAnalyzer(),
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
