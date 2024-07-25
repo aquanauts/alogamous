@@ -1,0 +1,52 @@
+====================================================
+STARTING PROCESS Execution Server
+    Start time: 2024-07-23 21:00:00.011070+00:00
+    Version: 2811
+    Command line: ['.venv/bin/python3', '-m', 'execution/execution_service', '--version', '2811']
+====================================================
+2024-07-23 21:00:01,974 - root - INFO - Initialized Influx DB Client to host https://influx.co
+2024-07-23 21:00:01,975 - root - INFO - Scheduling Error Handler in 15.0 seconds
+2024-07-23 21:00:01,975 - root - INFO - prometheus client http server running on http://prometheus.co
+2024-07-23 21:00:01,998 - root - INFO - Initialized prometheus server.
+2024-07-23 21:00:01,998 - root - INFO - reading messages from 2024-07-24
+2024-07-23 21:00:01,999 - subscription_state - INFO - Updating subscribed topics to: frozenset({'topic_internal'})
+2024-07-23 21:00:02,157 - root - INFO - Kafka reading from start of day 2024-07-23 16:00:00+00:00 on topic topic_internal from brokers:9092
+2024-07-23 21:00:02,768 - root - INFO - Kafka source starting for topic topic_internal at current offset 242431 end offset 242431 on servers brokers:9092
+2024-07-23 21:00:02,768 - root - INFO - Kafka topic topic_internal is caught up at offset 242431
+2024-07-23 21:00:02,768 - root - INFO - Execution server is caught up
+2024-07-23 21:00:15,935 - root - INFO - Client 120.2.3.5:40150 Connected
+2024-07-23 21:00:15,990 - root - INFO - Client 120.2.3.5:40150 set name to execution_server
+2024-07-23 21:00:48,389 - root - INFO - Client 121.22.113:4912 Connected
+2024-07-23 21:00:48,456 - root - INFO - Client 121.22.113:4912 set name to execution_server
+2024-07-23 21:13:53,770 - root - ERROR - Requested unknown market None
+2024-07-23 21:13:53,771 - root - ERROR - Exception in message handler <bound method ExecutionService.market_tester of <execution.execution_service.market_tester object at 0x7f32eff7390>> 'NoneType' object has no attribute 'region'
+2024-07-23 21:13:53,862 - root - INFO - Closing client connection.
+2024-07-23 21:13:53,862 - root - INFO - Closing client connection.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 1938, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File ".build/2811/execution/execution_service", line 973, in <module>
+    app.run(life_cycle_runner.run, life_cycle_runner.stop)
+  File ".build/2811/app/application.py", line 219, in run
+    run(self.start(my_date, main, stop))
+  File ".build/2811/.venv/lib/python3.11/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File ".build/2811/.venv/lib/python3.11/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ".build/2811/.venv/lib/python3.11/events.py", line 653, in run_until_done
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "2811/app/application.py", line 421, in start
+    await self.task
+  File "2811/messages/app/runner.py", line 449, in run
+    await asyncio.gather(*self.running_tasks)
+  File "2811/messages/processor.py", line 340, in run
+    await self.dispatch(message)
+  File ".build/2811/execution/execution_service", line 1315, in market_test
+    if symbol and obj.region != 'NORTHAMERICA'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'region'
+2024-07-23 21:13:54,091 - root - ERROR - Caught exception N/A. Message: Unclosed client session
+NoneType: None
