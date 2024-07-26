@@ -1,0 +1,81 @@
+====================================================
+STARTING PROCESS Quantity Loader
+    Start time: 2024-05-30 10:30:00.034654+00:00
+    Version: 2673
+    Command line: ['.venv/bin/python3', '-m', 'loaders.quantity_loader', '--market', 'US']
+====================================================
+2024-05-30 10:30:18,446 - root - INFO - prometheus client http server running on http://prometheus.co
+2024-05-30 10:30:18,549 - root - INFO - Initialized prometheus server.
+2024-05-30 10:30:18,549 - root - INFO - Kafka publishing on topic topic_internal at brokers:9092
+2024-05-30 10:30:18,561 - root - INFO - reading messages from 2024-05-30
+2024-05-30 10:30:18,561 - subscription_state - INFO - Updating subscribed topics to: frozenset({'topic_internal'})
+2024-05-30 10:30:43,733 - root - INFO - Caught up and static data complete; starting timer.
+2024-05-30 10:30:43,733 - root - INFO - Caught up and static data complete; starting timer.
+2024-05-30 10:30:43,733 - root - INFO - Caught up and static data complete; starting timer.
+2024-05-30 10:40:43,722 - root - INFO - loading from quantity_table_v2 for record_date=2024-05-29
+2024-05-30 10:40:43,843 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:40:48,122 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:40:48,124 - root - INFO - Published 7256 quantities from quantity_table_v2 for 2024-05-29.
+2024-05-30 10:40:48,124 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=YS
+2024-05-30 10:40:48,236 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:40:50,276 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=UVD
+2024-05-30 10:40:50,293 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSS
+2024-05-30 10:40:51,883 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSET
+2024-05-30 10:40:51,921 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=NMQ
+2024-05-30 10:40:52,080 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=BSTT
+2024-05-30 10:40:52,098 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=SXDF
+2024-05-30 10:40:52,336 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDI
+2024-05-30 10:40:52,396 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDN
+2024-05-30 10:40:52,476 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 and symbol not in instrument_list
+2024-05-30 10:40:52,664 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:40:52,666 - root - INFO - Published 7220 quantities from quantity_table_v2_parallel for 2024-05-29.
+2024-05-30 10:40:52,666 - root - INFO - loading from eod_quantities for record_date=2024-05-29
+2024-05-30 10:40:52,780 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:40:54,010 - root - WARNING - symbol 41A204 not found
+2024-05-30 10:40:54,010 - root - WARNING - extra symbol 41A204 not found
+2024-05-30 10:40:54,053 - root - WARNING - symbol 8838AE not found
+2024-05-30 10:40:55,762 - root - WARNING - symbol squ ANDIO not found
+2024-05-30 10:40:55,762 - root - WARNING - extra symbol ANDIO not found
+2024-05-30 10:41:01,102 - root - WARNING - symbol 3HDF57 not found
+2024-05-30 10:41:01,102 - root - WARNING - extra symbol 3HDF57 not found
+2024-05-30 10:41:01,426 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:41:01,428 - root - INFO - Published 15038 quantities from eod_quantities for 2024-05-29.
+2024-05-30 10:50:43,800 - root - INFO - loading from quantity_table_v2 for record_date=2024-05-29
+2024-05-30 10:50:43,914 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:50:44,179 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:50:44,180 - root - INFO - Published 0 quantities from quantity_table_v2 for 2024-05-29.
+2024-05-30 10:40:48,124 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=YS
+2024-05-30 10:40:48,236 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:40:50,276 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=UVD
+2024-05-30 10:40:50,293 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSS
+2024-05-30 10:40:51,883 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSET
+2024-05-30 10:40:51,921 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=NMQ
+2024-05-30 10:40:52,080 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=BSTT
+2024-05-30 10:40:52,098 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=SXDF
+2024-05-30 10:40:52,336 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDI
+2024-05-30 10:40:52,396 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDN
+2024-05-30 10:40:52,476 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 and symbol not in instrument_list
+2024-05-30 10:40:52,664 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:40:52,666 - root - INFO - Published 0 quantities from quantity_table_v2_parallel for 2024-05-29.
+2024-05-30 10:50:44,830 - root - INFO - Published 0 quantities from quantity_table_v2_parallel for 2024-05-29.
+2024-05-30 10:50:44,830 - root - INFO - loading from eod_quantities for record_date=2024-05-29
+2024-05-30 10:50:44,939 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:50:45,266 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:50:45,266 - root - INFO - Published 0 quantities from eod_quantities for 2024-05-29.
+2024-05-30 11:00:43,802 - root - INFO - loading from quantity_table_v2 for record_date=2024-05-29
+2024-05-30 11:00:43,916 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 11:00:44,174 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 11:00:44,174 - root - INFO - Published 0 quantities from quantity_table_v2 for 2024-05-29.
+2024-05-30 10:40:48,124 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=YS
+2024-05-30 10:40:48,236 - root - INFO - connecting to db-sql.co/qty
+2024-05-30 10:40:50,276 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=UVD
+2024-05-30 10:40:50,293 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSS
+2024-05-30 10:40:51,883 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=XSET
+2024-05-30 10:40:51,921 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=NMQ
+2024-05-30 10:40:52,080 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=BSTT
+2024-05-30 10:40:52,098 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=SXDF
+2024-05-30 10:40:52,336 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDI
+2024-05-30 10:40:52,396 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 exchange=ASDN
+2024-05-30 10:40:52,476 - root - INFO - loading from quantity_table_v2_parallel for record_date=2024-05-29 and symbol not in instrument_list
+2024-05-30 10:40:52,664 - root - INFO - closing connection to db-sql.co/qty
+2024-05-30 10:40:52,666 - root - INFO - Published 0 quantities from quantity_table_v2_parallel for 2024-05-29.

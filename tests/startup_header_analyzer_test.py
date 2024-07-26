@@ -1,10 +1,13 @@
 import io
 
-from alogamous import startup_header_analyzer
+from alogamous import log_line_parser, startup_header_analyzer
 
 
-def test_startup_header_analyzer():
-    startup_analyzer = startup_header_analyzer.StartupHeaderAnalyzer()
+def test_report():
+    line_parser = log_line_parser.LogLineParser(
+        ["datetime", "source", "level", "message"], " - ", "===================================================="
+    )
+    startup_analyzer = startup_header_analyzer.StartupHeaderAnalyzer(line_parser)
     in_stream = """====================================================
 STARTING Tracking service
     Start time: 2024-06-20 09:00:00.001550+00:00

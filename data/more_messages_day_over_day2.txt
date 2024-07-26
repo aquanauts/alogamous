@@ -1,0 +1,139 @@
+====================================================
+STARTING PROCESS Java Price Process
+    Start time: 2024-06-28 12:00:00.060562+00:00
+    Version: 2757
+    Command line: ['./build/app/java_process', '--market', 'US']
+====================================================
+2024-06-28T12:00:00.460+0000 [main] INFO com.app.java_process.info - Starting with config Config{hostName='host'services='[JAVA_PRICE_PROCESS]'}
+2024-06-28T12:00:00.693+0000 [main] INFO com.app.java_process.info - Reading from kafka servers brokers:9092
+2024-06-28T12:00:00.745+0000 [main] INFO com.app.java_process.info - Reading topic java_topic from kafka servers brokers:9092
+2024-06-28T12:00:00.745+0000 [main] INFO com.app.java_process.info - Reading messages for 2024-06-28
+2024-06-28T12:00:00.773+0000 [main] INFO com.app.java_process.info - Writing to topic bosun_internal to kafka servers brokers:9092
+2024-06-28T12:00:00.777+0000 [main] INFO com.app.java_process.info - Writing to topic sip_last_trade_px to kafka servers brokers:9092
+2024-06-28T12:00:00.982+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] WARN com.app.java_process.info - KafkaReader found no data on topic java_topic. This will only log once.
+2024-06-28T12:00:01.200+0000 [Service thread for com.app.java_process.kafka.KafkaReader@1cf6d1be] INFO com.app.java_process.info - Starting KafkaReader at offset 1005022
+2024-06-28T12:51:04.418+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] INFO com.app.java_process.info - Starting KafkaReader at offset 28181084
+2024-06-28T20:00:26.953+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27ER995. Only publishing externally.
+2024-06-28T20:00:26.980+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 344232AS7. Only publishing externally.
+2024-06-28T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3393DS8. Only publishing externally.
+2024-06-28T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 339SA02. Only publishing externally.
+2024-06-28T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 276033A. Only publishing externally.
+2024-06-28T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3487ASD4. Only publishing externally.
+2024-06-28T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3488ASD0. Only publishing externally.
+2024-06-28T20:00:26.982+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 348ADSD68. Only publishing externally.
+2024-06-28T20:00:26.982+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 28SS923. Only publishing externally.
+2024-06-28T20:00:26.982+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3176SD8. Only publishing externally.
+2024-06-28T20:00:26.983+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 343S58. Only publishing externally.
+2024-06-28T20:00:26.983+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3397AS1. Only publishing externally.
+2024-06-28T20:00:26.985+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3434ADS3. Only publishing externally.
+2024-06-28T20:00:26.985+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3452323ASD89. Only publishing externally.
+2024-06-28T20:00:26.985+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 343A49. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 346AAA49. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 343S46. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 32323240ASDFGA0. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34AS856. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3AAAA34661. Only publishing externally.
+2024-06-28T20:00:26.986+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2ASDGA7774. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 24ASDG723. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34ASD949. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 339SDFGH65. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2323121HS8. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34723DF18. Only publishing externally.
+2024-06-28T20:00:26.987+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3433DF1. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35DDF063. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3423237ASDF21. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 348SAD62. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35ADSF000. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 292AS98. Only publishing externally.
+2024-06-28T20:00:26.988+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35SDFH048. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3453ASD2. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 347ASD48. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34D799. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34DSS853. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 351S65. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35ASDG123. Only publishing externally.
+2024-06-28T20:00:26.989+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 353320S60. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35DA114. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 352332SD159. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 351SA32. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 28ASDG612. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 404DSAG06. Only publishing externally.
+2024-06-28T20:00:26.990+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35sa3DS36. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 298S87. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 353ADSG54. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35ASADA240. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 353ADSG72. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35adsg38adsga11. Only publishing externally.
+2024-06-28T20:00:26.991+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3125162. Only publishing externally.
+2024-06-28T20:00:26.992+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35sdfa462. Only publishing externally.
+2024-06-28T20:00:26.992+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3412300. Only publishing externally.
+2024-06-28T20:00:26.992+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 356asd48. Only publishing externally.
+2024-06-28T20:00:26.992+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3551adsf9. Only publishing externally.
+2024-06-28T20:00:26.992+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 28ewt803. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35099. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 350ew84. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 42025240. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 412ds97. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35223419. Only publishing externally.
+2024-06-28T20:00:27.163+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34cv769. Only publishing externally.
+2024-06-28T20:00:27.164+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3519q5. Only publishing externally.
+2024-06-28T20:00:27.164+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 351sdf41. Only publishing externally.
+2024-06-28T20:00:27.165+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35adsg216. Only publishing externally.
+2024-06-28T20:00:27.165+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 28ads325998. Only publishing externally.
+2024-06-28T20:00:27.165+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 26q2334547. Only publishing externally.
+2024-06-28T20:00:27.177+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 29adsg520. Only publishing externally.
+2024-06-28T20:00:27.177+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 372c67. Only publishing externally.
+2024-06-28T20:00:27.178+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 325sdf98. Only publishing externally.
+2024-06-28T20:00:27.178+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2323522ds140. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3081234ds39. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 293SAAS712319. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 31123dsf454. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2XZ2343SAASF42. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 4123asd5974. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2QW4787. Only publishing externally.
+2024-06-28T20:00:27.179+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 310545cfgsa7. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 32325812. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 4139WAE6. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3283d3256. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 277ads23553. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 255aga96. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 244WE51. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 23A288. Only publishing externally.
+2024-06-28T20:00:27.180+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2831241SDF00. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 268ADS10. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3033ADS8. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35S25DTAG300. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 36AS641. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 346ADS73. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 30ADS334. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 30ADS641. Only publishing externally.
+2024-06-28T20:00:27.181+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 31ADSG615. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 22SA985. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 30ADS786. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 34ADADS5S850. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 333ADS55. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 30SD078. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 294ASD77. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 32AS274. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 352ASD52. Only publishing externally.
+2024-06-28T20:00:27.182+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3828ADS00. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 236S99. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27860SD. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 243DSA03. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 30DS366. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 277ADS94. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 354DSA41. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 31G881. Only publishing externally.
+2024-06-28T20:00:27.183+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 39A2323SD858. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 2487GFD4. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 22DFG489. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 35SD24G267. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 23DS111. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 262332DS328. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 304ASD27. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 28DSA303. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 310AD34SG80. Only publishing externally.
+2024-06-28T20:00:27.184+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 39A741. Only publishing externally.
+2024-06-28T20:00:27.185+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 26232339DFS2. Only publishing externally.
+2024-06-28T20:00:27.185+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 311ADS49. Only publishing externally.
+2024-06-28T20:00:27.185+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 310A235SDG39. Only publishing externally.

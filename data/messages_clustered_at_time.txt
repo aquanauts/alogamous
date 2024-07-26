@@ -1,0 +1,75 @@
+====================================================
+STARTING PROCESS Batch Writer
+    Start time: 2024-06-10 10:30:00.153687+00:00
+    Version: 2692
+    Command line: ['.venv/bin/python3', '-m', 'db.batch_writer', '--market', 'US']
+====================================================
+2024-06-10 10:30:19,787 - root - INFO - prometheus client http server running on http://promethus.co
+2024-06-10 10:30:20,111 - root - INFO - Initialized prometheus server.
+2024-06-10 10:30:20,111 - root - INFO - reading messages from 2024-06-10
+2024-06-10 10:30:20,111 - subscription_state - INFO - Updating subscribed topics to: frozenset({'internal_topic'})
+2024-06-10 10:30:20,129 - root - INFO - Kafka reading from start of day 2024-06-10 05:00:00+00:00 on topic internal_topic from brokers:9092
+2024-06-10 10:30:20,679 - root - INFO - Kafka source starting for topic internal_topic at current offset 9747390 end offset 9477797 on servers brokers:9092
+2024-06-10 10:30:20,680 - root - INFO - Kafka topic internal_topic is caught up at offset 9474796
+2024-06-10 10:30:43,427 - root - INFO - connecting to db.co/production
+2024-06-10 10:30:43,503 - root - INFO - Deleted 0 rows from batch_db_table for {'date': datetime.date(2024, 6, 10), 'market': 'US'}
+2024-06-10 10:30:43,503 - aiokafka.consumer.subscription_state - INFO - Updating subscribed topics to: frozenset({'batch_reader_topic'})
+2024-06-10 10:30:43,521 - root - INFO - Kafka reading from start of day 2024-06-10 05:00:00+00:00 on topic batch_reader_topic from brokers:9092
+2024-06-10 10:30:44,024 - root - INFO - Kafka source starting for topic batch_reader_topic at current offset 341860219 end offset 3418623019 on servers brokers:9092
+2024-06-10 21:01:59,774 - root - INFO - wrote 1 rows to batch_db_table. Total rows 1
+2024-06-10 21:02:00,556 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 1001
+2024-06-10 21:02:00,864 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 2001
+2024-06-10 21:02:01,600 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 3001
+2024-06-10 21:02:02,995 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 4001
+2024-06-10 21:02:04,066 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 5001
+2024-06-10 21:02:05,374 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 6001
+2024-06-10 21:02:06,815 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 7001
+2024-06-10 21:02:08,026 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 8001
+2024-06-10 21:02:09,309 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 9001
+2024-06-10 21:02:10,430 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 10001
+2024-06-10 21:02:11,638 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 11001
+2024-06-10 21:02:12,619 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 12001
+2024-06-10 21:02:13,804 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 13001
+2024-06-10 21:02:14,109 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 14001
+2024-06-10 21:02:14,405 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 15001
+2024-06-10 21:02:14,685 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 16001
+2024-06-10 21:02:14,964 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 17001
+2024-06-10 21:02:15,235 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 18001
+2024-06-10 21:02:15,496 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 19001
+2024-06-10 21:02:16,325 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 20001
+2024-06-10 21:02:17,553 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 21001
+2024-06-10 21:02:18,994 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 22001
+2024-06-10 21:02:20,272 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 23001
+2024-06-10 21:02:21,571 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 24001
+2024-06-10 21:02:22,768 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 25001
+2024-06-10 21:02:23,954 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 26001
+2024-06-10 21:02:25,229 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 27001
+2024-06-10 21:02:26,441 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 28001
+2024-06-10 21:02:26,946 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 29001
+2024-06-10 21:02:27,245 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 30001
+2024-06-10 21:02:27,535 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 31001
+2024-06-10 21:02:27,911 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 32001
+2024-06-10 21:02:28,192 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 33001
+2024-06-10 21:02:28,460 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 34001
+2024-06-10 21:02:28,723 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 35001
+2024-06-10 21:02:29,605 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 36001
+2024-06-10 21:02:30,563 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 37001
+2024-06-10 21:02:31,959 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 38001
+2024-06-10 21:02:33,369 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 39001
+2024-06-10 21:02:34,820 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 40001
+2024-06-10 21:02:36,100 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 41001
+2024-06-10 21:02:37,333 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 42001
+2024-06-10 21:02:38,562 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 43001
+2024-06-10 21:02:39,840 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 44001
+2024-06-10 21:02:40,144 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 45001
+2024-06-10 21:02:40,464 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 46001
+2024-06-10 21:02:40,754 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 47001
+2024-06-10 21:02:41,066 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 48001
+2024-06-10 21:02:41,372 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 49001
+2024-06-10 21:02:41,641 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 50001
+2024-06-10 21:02:42,456 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 51001
+2024-06-10 21:02:43,583 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 52001
+2024-06-10 21:02:45,016 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 53001
+2024-06-10 21:02:46,166 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 54001
+2024-06-10 21:02:47,401 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 55001
+2024-06-10 21:02:48,663 - root - INFO - wrote 1000 rows to batch_db_table. Total rows 56001
