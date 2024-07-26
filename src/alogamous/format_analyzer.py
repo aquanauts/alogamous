@@ -18,5 +18,5 @@ class FormatAnalyzer(analyzer.Analyzer):
             self.startup_block = False
 
     def report(self, out_stream):
-        out_stream.write("\nLines that do not conform to log format:\n- ")
+        out_stream.write("Lines that do not conform to log format:\n- ")
         out_stream.write("\n- ".join(self.un_formated_lines))

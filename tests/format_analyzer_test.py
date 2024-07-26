@@ -26,8 +26,7 @@ Hello I am a bad log line"""
     format_checker.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """
-Lines that do not conform to log format:
+        == """Lines that do not conform to log format:
 - Hello I am a bad log line
 - Hello I am a bad log line"""
     )
