@@ -40,7 +40,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
             line_count_analyzer.LineCountAnalyzer(),
             format_analyzer.FormatAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
-            loginfo_analyzer.InfoAnalyzer(),
+            loginfo_analyzer.InfoAnalyzer(line_parser),
             startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
         ],
