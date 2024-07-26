@@ -37,7 +37,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
             error_counter_analyzer.ErrorCounterAnalyzer(),
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
-            loginfo_analyzer.InfoAnalyzer(),
+            loginfo_analyzer.InfoAnalyzer(line_parser),
             startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
         ],
