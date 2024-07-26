@@ -1,6 +1,21 @@
 from __future__ import annotations
 
 
+class ConfigParameters:
+    EXPECTED_FIELDS = "expected fields"
+    SEPERATOR = "seperator"
+    HEADER_LINE = "header line"
+
+
+LOG_FILE_CONFIGS = {
+    "default": {
+        ConfigParameters.EXPECTED_FIELDS: ["datetime", "source", "level", "message"],
+        ConfigParameters.SEPERATOR: " - ",
+        ConfigParameters.HEADER_LINE: "====================================================",
+    }
+}
+
+
 class LineType:
     HEADER_LINE = "header line"
     LOG_LINE = "log line"
@@ -8,7 +23,7 @@ class LineType:
 
 
 class LogLineParser:
-    def __init__(self, header_line: str, expected_fields: list[str], seperator: str):
+    def __init__(self, expected_fields: list[str], seperator: str, header_line: str):
         self.header_line = header_line
         self.expected_fields = expected_fields
         self.separator = seperator
