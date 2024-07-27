@@ -50,14 +50,13 @@ class LogLineParser:
     def parse_complex_line(self, line):
         parsed_line = {"type": LineType.LOG_LINE}
         chunked_line = line.split(self.separator)
-        remaining_chunks = chunked_line
+        remaining_chunks = list(chunked_line)
         separated_line = []
         for chunk in chunked_line:
             if chunk.count(self.separator2) == self.separator2_count:
                 remaining_chunks.remove(chunk)
                 separated_line.extend(chunk.split(self.separator2))
-        for chunk in remaining_chunks:
-            separated_line = separated_line.append(chunk)
+        separated_line.extend(remaining_chunks)
         index = 0
         for field_list in self.expected_fields:
             for field in field_list:
