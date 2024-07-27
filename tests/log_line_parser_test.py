@@ -43,3 +43,21 @@ def test_parse_start_header_content():
         "type": "unstructured line",
         "line": "    Start time: 2024-06-20 09:00:00.001550+00:00",
     }
+
+
+def test_parse_complex_log_line():
+    parser = log_line_parser.LogLineParser(
+        [["datetime", "thread", "level", "source"], ["message"]],
+        " - ",
+        "====================================================",
+        " ",
+    )
+    line = "2024-06-28T12:00:00.460+0000 [main] INFO com.app.java_process.info - Starting with config"
+    assert parser.parse(line) == {
+        "type": "log line",
+        "datetime": "2024-06-28T12:00:00.460+0000",
+        "thread": "[main]",
+        "level": "INFO",
+        "source": "com.app.java_process.info",
+        "message": "Starting with config",
+    }
