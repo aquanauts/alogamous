@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any
+
 
 class ConfigParameters:
     EXPECTED_FIELDS = "expected fields"
@@ -8,7 +10,7 @@ class ConfigParameters:
     SEPARATOR2 = "separator2"
 
 
-LOG_FILE_CONFIGS = {
+LOG_FILE_CONFIGS: dict[str, dict[str, Any]] = {
     "python_logs": {
         ConfigParameters.EXPECTED_FIELDS: ["datetime", "source", "level", "message"],
         ConfigParameters.SEPERATOR: " - ",
