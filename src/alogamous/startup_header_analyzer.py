@@ -18,5 +18,5 @@ class StartupHeaderAnalyzer(analyzer.Analyzer):
                 self.startup_block = False
 
     def report(self, out_stream):
-        out_stream.write("\nLines that are part of the startup header:\n- ")
+        out_stream.write("\nLines that are part of the startup header(s):\n- ")
         out_stream.write("\n- ".join(self.startup_lines))
