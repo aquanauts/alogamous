@@ -31,7 +31,10 @@ with open(f"{sys.argv[3]}", "a") as output_file:
     )
     seperator = str(log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.SEPERATOR])
     header_line = str(log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.HEADER_LINE])
-    line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line)
+    seperator2 = None
+    if log_line_parser.ConfigParameters.SEPARATOR2 in log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]]:
+        seperator2 = str(log_line_parser.LOG_FILE_CONFIGS[sys.argv[1]][log_line_parser.ConfigParameters.SEPARATOR2])
+    line_parser = log_line_parser.LogLineParser(expected_fields, seperator, header_line, seperator2)
     analyzer.analyze_log_stream(
         [
             # echo_analyzer.EchoAnalyzer(),
