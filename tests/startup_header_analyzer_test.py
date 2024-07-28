@@ -24,7 +24,7 @@ STARTING Tracking service
     assert (
         out_stream.getvalue()
         == """
-Lines that are part of the startup header:
+Lines that are part of the startup header(s):
 - STARTING Tracking service
 -     Start time: 2024-06-20 09:00:00.001550+00:00
 -     Version: 2729a
