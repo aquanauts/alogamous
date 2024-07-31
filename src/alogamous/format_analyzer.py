@@ -5,11 +5,17 @@ class FormatAnalyzer(analyzer.Analyzer):
     def __init__(self, line_parser):
         self.parser = line_parser
         self.startup_block = False
+        self.stack_trace = False
         self.un_formated_lines = []
 
     def read_log_line(self, line):
         line_type = self.parser.parse(line)["type"]
-        if self.startup_block is False:
+        if line.count("Traceback") == 1:
+            self.stack_trace = True
+        elif self.stack_trace:
+            if line_type == (log_line_parser.LineType.LOG_LINE or log_line_parser.LineType.HEADER_LINE):
+                self.stack_trace = False
+        elif self.startup_block is False and self.stack_trace is False:
             if line_type == log_line_parser.LineType.UNSTRUCTURED_LINE:
                 self.un_formated_lines.append(line)
             elif line_type == log_line_parser.LineType.HEADER_LINE:
