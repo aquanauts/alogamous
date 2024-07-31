@@ -13,8 +13,8 @@ class WarningAnalyzer(analyzer.Analyzer):
 
     def report(self, out_stream):
         if self.count == 0:
-            out_stream.write("\n" + "No Warnings were detected.")
+            out_stream.write("No Warnings were detected.")
         elif self.count == 1:
-            out_stream.write("\n" + "1 Warning was detected.")
+            out_stream.write("1 Warning was detected.")
         else:
-            out_stream.write("\n" + str(self.count) + " Warnings were detected.")
+            out_stream.write(str(self.count) + " Warnings were detected.")

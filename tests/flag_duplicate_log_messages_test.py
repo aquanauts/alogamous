@@ -12,7 +12,7 @@ def test_flag_duplicate_log_messages():
     for line in in_stream:
         flagger.read_log_line(line)
     flagger.report(out_stream)
-    assert out_stream.getvalue() == """Duplicate Log Messages:\nlog message 1\n"""
+    assert out_stream.getvalue() == """Duplicate Log Messages:\nlog message 1"""
 
 
 def test_flag_duplicate_log_messages_no_duplicates():
@@ -24,4 +24,4 @@ def test_flag_duplicate_log_messages_no_duplicates():
     for line in in_stream:
         flagger.read_log_line(line)
     flagger.report(out_stream)
-    assert out_stream.getvalue() == """No duplicate log messages\n"""
+    assert out_stream.getvalue() == """No duplicate log messages"""
