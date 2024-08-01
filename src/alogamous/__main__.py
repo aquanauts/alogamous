@@ -9,6 +9,7 @@ from alogamous import (
     line_count_analyzer,
     log_line_parser,
     loginfo_analyzer,
+    stack_trace_analyzer,
     startup_header_analyzer,
     warning_analyzer,
 )
@@ -44,6 +45,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
             format_analyzer.FormatAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
             loginfo_analyzer.InfoAnalyzer(line_parser),
+            stack_trace_analyzer.StackTraceAnalyzer(line_parser),
             startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
             warning_analyzer.WarningAnalyzer(),
         ],
