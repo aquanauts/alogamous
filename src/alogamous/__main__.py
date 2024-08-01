@@ -2,6 +2,7 @@ import sys
 
 from alogamous import (
     analyzer,
+    daily_count_analyzer,
     directory_reader,
     error_counter_analyzer,
     flag_duplicate_log_messages,
@@ -39,6 +40,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
     analyzer.analyze_log_stream(
         [
             # echo_analyzer.EchoAnalyzer(),
+            daily_count_analyzer.DailyCountAnalyzer(line_parser),
             error_counter_analyzer.ErrorCounterAnalyzer(),
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
