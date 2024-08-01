@@ -17,4 +17,4 @@ def test_warning_count():
     for line in in_stream:
         counter.read_log_line(line)
     counter.report(out_stream)
-    assert out_stream.getvalue() == "\n2 Warnings were detected."
+    assert out_stream.getvalue() == "2 Warnings were detected."
