@@ -5,7 +5,6 @@ from alogamous import analyzer, log_line_parser
 
 # supposed to track and compare for only one service
 # currently assumes all lines are from one service, may need to change in future
-# also only works with one datetime format, will probably cause main to fail if run on example_logs_2
 class DailyCountAnalyzer(analyzer.Analyzer):
     def __init__(self, line_parser):
         self.parser = line_parser
@@ -16,7 +15,10 @@ class DailyCountAnalyzer(analyzer.Analyzer):
     def read_log_line(self, line):
         parsed_line = self.parser.parse(line)
         if parsed_line["type"] == log_line_parser.LineType.LOG_LINE:
-            date_string = parsed_line["datetime"].split(" ")[0]
+            if parsed_line["datetime"].count(" ") == 1:
+                date_string = parsed_line["datetime"].split(" ")[0]
+            else:
+                date_string = parsed_line["datetime"].split("T")[0]
             date_object = datetime.datetime.strptime(date_string, "%Y-%m-%d").astimezone(datetime.timezone.utc).date()
             line_level = parsed_line["level"].lower()
             if line_level == "info":

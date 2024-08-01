@@ -127,3 +127,32 @@ def test_no_increase():
         comparer.read_log_line(line)
     comparer.report(out_stream)
     assert out_stream.getvalue() == "Instances where specific types of messages increased from previous day:"
+
+
+def test_other_format():
+    line_parser = log_line_parser.LogLineParser(
+        [["datetime", "thread", "level", "source"], ["message"]],
+        " - ",
+        "====================================================",
+        " ",
+    )
+    comparer = daily_count_analyzer.DailyCountAnalyzer(line_parser)
+    in_stream = """====================================================
+STARTING PROCESS Java Price Process
+    Start time: 2024-06-27 12:00:00.060562+00:00
+    Version: 2757
+    Command line: ['./build/app/java_process', '--market', 'US']
+====================================================
+2024-06-27T12:00:00.460+0000 [main] WARN com.app.java_process.info - Starting with config
+2024-06-28T12:00:00.693+0000 [main] WARN com.app.java_process.info - Reading from kafka servers brokers:9092
+2024-06-28T12:00:00.745+0000 [main] WARN com.app.java_process.info - Reading topic java_topic from kafka servers
+2024-06-28T12:00:00.745+0000 [main] WARN com.app.java_process.info - Reading messages for 2024-06-27"""
+    out_stream = io.StringIO()
+    for line in in_stream.splitlines():
+        comparer.read_log_line(line)
+    comparer.report(out_stream)
+    assert (
+        out_stream.getvalue()
+        == """Instances where specific types of messages increased from previous day:
+- Number of warning messages increased by 2 on 2024-06-28"""
+    )
