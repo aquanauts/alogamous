@@ -5,6 +5,10 @@ from alogamous import analyzer, log_line_parser
 
 # supposed to track and compare for only one service
 # currently assumes all lines are from one service, may need to change in future
+# current plan to fix this is to have "internal" and "external" report methods
+# the "internal" report would save information so that the real report can it access later
+# so when a header line is detected, it can internally report results and clear variables and start over
+# and then when the real report is called, it can access the internally reported info for the final report
 class DailyCountAnalyzer(analyzer.Analyzer):
     def __init__(self, line_parser):
         self.parser = line_parser
