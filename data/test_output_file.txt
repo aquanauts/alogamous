@@ -64,7 +64,7 @@ Lines that are part of the startup header:
 -     Version: 2729a
 -     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
 
->>>>>>>>>> a report has been reported <<<<<<<<<<
+------ a report has been reported ------
 
 Number of error lines: 22
 
@@ -132,4 +132,4 @@ Lines that are part of the startup header:
 -     Version: 2729a
 -     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
 
->>>>>>>>>> a report has been reported <<<<<<<<<<
+------ a report has been reported ------

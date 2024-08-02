@@ -26,4 +26,4 @@ def test_analyze_log_stream():
     out_stream = io.StringIO()
 
     analyzer.analyze_log_stream([TestAnalyzer1(), TestAnalyzer2()], in_stream, out_stream)
-    assert out_stream.getvalue() == "\n\n\n\n>>>>>>>>>> a report has been reported <<<<<<<<<<\n\n"
+    assert out_stream.getvalue() == "\n\n\n\n------ a report has been reported ------\n\n"

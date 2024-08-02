@@ -18,4 +18,4 @@ def analyze_log_stream(analyzers, in_stream, out_stream):
     for analyzer in analyzers:
         analyzer.report(out_stream)
         out_stream.write("\n\n")
-    out_stream.write(">>>>>>>>>> a report has been reported <<<<<<<<<<\n\n")
+    out_stream.write("------ a report has been reported ------\n\n")
