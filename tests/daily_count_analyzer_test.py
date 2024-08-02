@@ -26,9 +26,9 @@ STARTING Tracking service
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
-- On 2024-06-21, the number of info messages increased by 1 from previous day
-- On 2024-06-22, the number of info messages increased by 1 from previous day"""
+        == """Daily increases in info log message for Tracking service:
+- On 2024-06-21, the number of info messages increased by 1 from the previous day
+- On 2024-06-22, the number of info messages increased by 1 from the previous day"""
     )
 
 
@@ -55,9 +55,9 @@ STARTING Tracking service
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
-- On 2024-06-21, the number of warning messages increased by 1 from previous day
-- On 2024-06-22, the number of warning messages increased by 1 from previous day"""
+        == """Daily increases in warning log message for Tracking service:
+- On 2024-06-21, the number of warning messages increased by 1 from the previous day
+- On 2024-06-22, the number of warning messages increased by 1 from the previous day"""
     )
 
 
@@ -84,9 +84,9 @@ STARTING Tracking service
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
-- On 2024-06-21, the number of error messages increased by 1 from previous day
-- On 2024-06-22, the number of error messages increased by 1 from previous day"""
+        == """Daily increases in error log message for Tracking service:
+- On 2024-06-21, the number of error messages increased by 1 from the previous day
+- On 2024-06-22, the number of error messages increased by 1 from the previous day"""
     )
 
 
@@ -125,13 +125,15 @@ STARTING Tracking service
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
-- On 2024-06-21, the number of info messages increased by 1 from previous day
-- On 2024-06-22, the number of info messages increased by 1 from previous day
-- on 2024-06-21, the number of warning messages increased by 1 from previous day
-- On 2024-06-22, the number of warning messages increased by 1 from previous day
-- On 2024-06-21, the number of error messages increased by 1 from previous day
-- On 2024-06-22, the number of error messages increased by 1 from previous day"""
+        == """Daily increases in info log message for Tracking service:
+- On 2024-06-21, the number of info messages increased by 1 from the previous day
+- On 2024-06-22, the number of info messages increased by 1 from the previous day
+Daily increases in warning log message for Tracking service:
+- On 2024-06-21, the number of warning messages increased by 1 from the previous day
+- On 2024-06-22, the number of warning messages increased by 1 from the previous day
+Daily increases in error log message for Tracking service:
+- On 2024-06-21, the number of error messages increased by 1 from the previous day
+- On 2024-06-22, the number of error messages increased by 1 from the previous day"""
     )
 
 
@@ -156,7 +158,7 @@ STARTING Tracking service
     for line in in_stream.splitlines():
         comparer.read_log_line(line)
     comparer.report(out_stream)
-    assert out_stream.getvalue() == "Daily increases in types of log message for Tracking service:"
+    assert out_stream.getvalue() == ""
 
 
 def test_other_format():
@@ -183,8 +185,8 @@ STARTING PROCESS Java Price Process
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Instances where specific types of messages increased from previous day:
-- Number of warning messages increased by 2 on 2024-06-28"""
+        == """Daily increases in warning log message for PROCESS Java Price Process:
+- On 2024-06-28, the number of warning messages increased by 2 from the previous day"""
     )
 
 
@@ -217,9 +219,9 @@ STARTING PROCESS Quantity Loader
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
+        == """Daily increases in info log message for Tracking service:
 - On 2024-06-21, the number of info messages increased by 1 from the previous day
-Daily increases in types of log message for PROCESS Quantity Loader:
+Daily increases in info log message for PROCESS Quantity Loader:
 - On 2024-05-31, the number of info messages increased by 1 from the previous day"""
     )
 
@@ -253,7 +255,7 @@ STARTING Tracking service
     comparer.report(out_stream)
     assert (
         out_stream.getvalue()
-        == """Daily increases in types of log message for Tracking service:
-- On 2024-06-21, the number of info messages increased by 1 from the previous day
-- On 2024-05-31, the number of info messages increased by 1 from the previous day"""
+        == """Daily increases in info log message for Tracking service:
+- On 2024-05-31, the number of info messages increased by 1 from the previous day
+- On 2024-06-21, the number of info messages increased by 1 from the previous day"""
     )

@@ -3,12 +3,6 @@ import datetime
 from alogamous import analyzer, log_line_parser
 
 
-# supposed to track and compare for only one service
-# currently assumes all lines are from one service, may need to change in future
-# current plan to fix this is to have "internal" and "external" report methods
-# the "internal" report would save information so that the real report can it access later
-# so when a header line is detected, it can internally report results and clear variables and start over
-# and then when the real report is called, it can access the internally reported info for the final report
 class DailyCountAnalyzer(analyzer.Analyzer):
     def __init__(self, line_parser):
         self.parser = line_parser
@@ -48,19 +42,26 @@ class DailyCountAnalyzer(analyzer.Analyzer):
             dictionary[service][date] += 1
 
     def report(self, out_stream):
-        self.report_increases(self.info_counts, "info", out_stream)
-        self.report_increases(self.warning_counts, "warning", out_stream)
-        self.report_increases(self.error_counts, "error", out_stream)
+        all_report_messages = []
+        all_report_messages.extend(self.format_report(self.info_counts, "info"))
+        all_report_messages.extend(self.format_report(self.warning_counts, "warning"))
+        all_report_messages.extend(self.format_report(self.error_counts, "error"))
+        out_stream.write("\n".join(all_report_messages))
 
     @staticmethod
-    def report_increases(dictionary, level, out_stream):
+    def format_report(dictionary, level):
+        report_messages = []
         for service in dictionary:
-            out_stream.write(f"Daily increases in types of log message for {service}:")
+            report_messages.append(f"Daily increases in {level} log message for {service}:")
             sorted_days = sorted(dictionary[service])
             for previous_day_index, day in enumerate(sorted_days[1:]):
                 previous_day = sorted_days[previous_day_index]
                 difference = dictionary[service][day] - dictionary[service][previous_day]
                 if difference > 0:
-                    out_stream.write(
-                        f"\n- On {day}, the number of {level} messages increased by {difference} from previous day"
+                    report_messages.append(
+                        f"- On {day}, the number of {level} messages increased by {difference} from the previous day"
                     )
+        filtered_report_messages = []
+        if len(report_messages) > len(dictionary):
+            filtered_report_messages.extend(report_messages)
+        return filtered_report_messages

@@ -1,56 +1,107 @@
-Number of error lines: 22
+Daily increases in error log message for Tracking service:
+- On 2024-06-21, the number of error messages increased by 10 from the previous day
+Daily increases in error log message for PROCESS Execution Server:
+
+Number of error lines: 25
 
 Duplicate Log Messages:
 STARTING Tracking service
-20 05:00:00+00:00 on topic internal from kafka.servers:9092
-Could not find instrument for ric UTU.T, using provided identifier 3
-instrument not found for sedol OIN38378
+Could not find instrument for ric JPQ.CC, using provided identifier 2
+Could not find instrument for ric RUE.ST, using provided identifier 5
 instrument not found for ric RUE.ST
-prometheus client http server running
-Closing client connection.
-Could not find instrument for ric YT.ATS, using provided identifier 1
+Updating subscribed topics to: frozenset({'internal_topic'})
+Initialized Influx DB Client to host
+Could not find instrument for ric 837.RIJ, using provided identifier 4
+tracking_service Closed
+Initialized prometheus server.
+Scheduling Error Handler in 150.0 seconds
+====================================================
+Kafka source starting for topic internal at current offset 7924032 end offset 7928950 on servers kafka.servers:9092
+market', 'US']
+29 exchange=YS
+Updating subscribed topics to: frozenset({'topic_internal'})
+instrument not found for sedol UY29387
+Caught exception N/A. Message: Unclosed connector NoneType: None
+29 exchange=XSS
+29 exchange=ASDN
+Could not find instrument for ric UTU.T, using provided identifier 3
+Caught up and static data complete; starting timer.
+prometheus client http server running on http://prometheus.co
+instrument not found for ric YT.ATS
 instrument not found for sedol DHI7337
-Could not find instrument for sedol UY29387, trying ric RUE.ST
-instrument not found for sedol BYP321337
-Updating subscribed topics to: frozenset({'internal'})
-20 09:00:00.001550+00:00
-market hours frequency
 Caught exception N/A. Message: Unclosed client session NoneType: None
+29 exchange=XSET
+Could not find instrument for sedol OIN38378, trying ric 837.RIJ
+29 exchange=NMQ
+Kafka topic internal is caught up at offset 7928949
+sql.co/qty
+version', '2729a']
 Version: 2729a
 Could not find instrument for sedol BYP321337, trying ric YT.ATS
-instrument not found for ric UYU.T
-Caught exception N/A. Message: Unclosed connector NoneType: None
-Updating prices
-Could not find instrument for sedol RZZZZ2, trying ric UYU.T
-====================================================
+Adding subscription for pid None
 Could not find instrument for sedol DHI7337, trying ric YT.ATS
+instrument not found for sedol BYP321337
+29.
+29
+instrument not found for ric 837.RIJ
+instrument not found for sedol OIN38378
+29 and symbol not in instrument_list
+instrument not found for sedol RZZZZ2
+29 exchange=UVD
+20 05:00:00+00:00 on topic internal from kafka.servers:9092
+Could not find instrument for sedol UY29387, trying ric RUE.ST
+Tracking service is caught up
+Closing client connection.
+market hours frequency
+29 exchange=BSTT
 instrument not found for ric JPQ.CC
 20
-Scheduling Error Handler in 150.0 seconds
-instrument not found for sedol UY29387
 Exception in message handler <bound method TrackingService.method of <app.tracking_service.TrackingService object at 0x7feba0d0>> TrackingService.on_order_change() missing 1 required positional argument: 'order_identifier'
-instrument not found for ric YT.ATS
-version', '2729a']
-Kafka source starting for topic internal at current offset 7924032 end offset 7928950 on servers kafka.servers:9092
-Could not find instrument for ric RUE.ST, using provided identifier 5
-Initialized prometheus server.
-Adding subscription for pid None
-Kafka topic internal is caught up at offset 7928949
-Could not find instrument for sedol OIN38378, trying ric 837.RIJ
-instrument not found for sedol RZZZZ2
-Could not find instrument for ric 837.RIJ, using provided identifier 4
-Tracking service is caught up
-tracking_service Closed
-instrument not found for ric 837.RIJ
-Could not find instrument for ric JPQ.CC, using provided identifier 2
-Initialized Influx DB Client to host
+Updating prices
+Updating subscribed topics to: frozenset({'internal'})
+Could not find instrument for sedol RZZZZ2, trying ric UYU.T
+20 09:00:00.001550+00:00
+29 exchange=ASDI
+29 exchange=SXDF
+instrument not found for ric UYU.T
+prometheus client http server running
+Could not find instrument for ric YT.ATS, using provided identifier 1
 
-Number of log lines: 151
+Number of log lines: 608
 
 Lines that do not conform to log format:
 - Hello I am a bad log line
+- NoneType: None
 
-Lines that are part of the startup header:
+1 non-fatal stack trace(s) found:
+- Traceback (most recent call last):
+-   File "<frozen runpy>", line 1938, in _run_module_as_main
+-   File "<frozen runpy>", line 88, in _run_code
+-   File ".build/2811/execution/execution_service", line 973, in <module>
+-     app.run(life_cycle_runner.run, life_cycle_runner.stop)
+-   File ".build/2811/app/application.py", line 219, in run
+-     run(self.start(my_date, main, stop))
+-   File ".build/2811/.venv/lib/python3.11/runners.py", line 190, in run
+-     return runner.run(main)
+-            ^^^^^^^^^^^^^^^^
+-   File ".build/2811/.venv/lib/python3.11/runners.py", line 118, in run
+-     return self._loop.run_until_complete(task)
+-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-   File ".build/2811/.venv/lib/python3.11/events.py", line 653, in run_until_done
+-     return future.result()
+-            ^^^^^^^^^^^^^^^
+-   File "2811/app/application.py", line 421, in start
+-     await self.task
+-   File "2811/messages/app/runner.py", line 449, in run
+-     await asyncio.gather(*self.running_tasks)
+-   File "2811/messages/processor.py", line 340, in run
+-     await self.dispatch(message)
+-   File ".build/2811/execution/execution_service", line 1315, in market_test
+-     if symbol and obj.region != 'NORTHAMERICA'
+-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- AttributeError: 'NoneType' object has no attribute 'region'
+
+Lines that are part of the startup header(s):
 - STARTING Tracking service
 -     Start time: 2024-06-20 09:00:00.001550+00:00
 -     Version: 2729a
@@ -63,73 +114,60 @@ Lines that are part of the startup header:
 -     Start time: 2024-06-21 09:00:00.001550+00:00
 -     Version: 2729a
 -     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
+- STARTING PROCESS Quantity Loader
+-     Start time: 2024-05-30 10:30:00.034654+00:00
+-     Version: 2673
+-     Command line: ['.venv/bin/python3', '-m', 'loaders.quantity_loader', '--market', 'US']
+- STARTING PROCESS Batch Writer
+-     Start time: 2024-06-10 10:30:00.153687+00:00
+-     Version: 2692
+-     Command line: ['.venv/bin/python3', '-m', 'db.batch_writer', '--market', 'US']
+- STARTING PROCESS Access Point
+-     Start time: 2025-10-01 12:30:00.022996+00:00
+-     Version: 2808
+-     Command line: ['.venv/bin/python3', '-m', 'process.access_point', '--market', 'US', '--ap', 'ARC']
+- STARTING PROCESS Execution Server
+-     Start time: 2024-07-23 21:00:00.011070+00:00
+-     Version: 2811
+-     Command line: ['.venv/bin/python3', '-m', 'execution/execution_service', '--version', '2811']
 
 >>>>>>>>>> a report has been reported <<<<<<<<<<
 
-Number of error lines: 22
+
+
+Number of error lines: 0
 
 Duplicate Log Messages:
-instrument not found for ric UYU.T
-Could not find instrument for sedol OIN38378, trying ric 837.RIJ
-prometheus client http server running
-instrument not found for sedol RZZZZ2
-Caught exception N/A. Message: Unclosed connector NoneType: None
-20 05:00:00+00:00 on topic internal from kafka.servers:9092
-tracking_service Closed
-instrument not found for ric RUE.ST
-version', '2729a']
-Version: 2729a
-Could not find instrument for ric YT.ATS, using provided identifier 1
-Adding subscription for pid None
-Kafka source starting for topic internal at current offset 7924032 end offset 7928950 on servers kafka.servers:9092
-20 09:00:00.001550+00:00
-Could not find instrument for sedol UY29387, trying ric RUE.ST
-Could not find instrument for ric RUE.ST, using provided identifier 5
 ====================================================
-market hours frequency
-Closing client connection.
-STARTING Tracking service
-instrument not found for ric 837.RIJ
-Updating subscribed topics to: frozenset({'internal'})
-instrument not found for sedol OIN38378
-Initialized prometheus server.
-Could not find instrument for ric 837.RIJ, using provided identifier 4
-Tracking service is caught up
-Exception in message handler <bound method TrackingService.method of <app.tracking_service.TrackingService object at 0x7feba0d0>> TrackingService.on_order_change() missing 1 required positional argument: 'order_identifier'
-20
-Scheduling Error Handler in 150.0 seconds
-Updating prices
-instrument not found for ric JPQ.CC
-Initialized Influx DB Client to host
-instrument not found for sedol BYP321337
-Could not find instrument for sedol DHI7337, trying ric YT.ATS
-Could not find instrument for ric JPQ.CC, using provided identifier 2
-instrument not found for sedol DHI7337
-Could not find instrument for sedol RZZZZ2, trying ric UYU.T
-instrument not found for ric YT.ATS
-Could not find instrument for sedol BYP321337, trying ric YT.ATS
-Could not find instrument for ric UTU.T, using provided identifier 3
-Caught exception N/A. Message: Unclosed client session NoneType: None
-Kafka topic internal is caught up at offset 7928949
-instrument not found for sedol UY29387
+Reading topic java_topic from kafka servers brokers:9092
+Writing to topic bosun_internal to kafka servers brokers:9092
+Reading from kafka servers brokers:9092
+Writing to topic sip_last_trade_px to kafka servers brokers:9092
+Starting with config Config{hostName='host'services='[JAVA_PRICE_PROCESS]'}
+Starting KafkaReader at offset 28181084
+Could not find symbol for sedol 344232AS7. Only publishing externally.
+Could not find symbol for sedol 3393DS8. Only publishing externally.
+Could not find symbol for sedol 27ER995. Only publishing externally.
+KafkaReader found no data on topic java_topic. This will only log once.
+STARTING PROCESS Java Price Process
+Version: 2757
+market', 'US']
+Starting KafkaReader at offset 1005022
 
-Number of log lines: 151
+Number of log lines: 157
 
-Lines that do not conform to log format:
-- Hello I am a bad log line
+All lines conform to log line format
 
-Lines that are part of the startup header:
-- STARTING Tracking service
--     Start time: 2024-06-20 09:00:00.001550+00:00
--     Version: 2729a
--     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
-- STARTING Tracking service
--     Start time: 2024-06-20 09:00:00.001550+00:00
--     Version: 2729a
--     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
-- STARTING Tracking service
--     Start time: 2024-06-21 09:00:00.001550+00:00
--     Version: 2729a
--     Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'US', '--version', '2729a']
+No non-fatal stack traces were found
+
+Lines that are part of the startup header(s):
+- STARTING PROCESS Java Price Process
+-     Start time: 2024-06-28 12:00:00.060562+00:00
+-     Version: 2757
+-     Command line: ['./build/app/java_process', '--market', 'US']
+- STARTING PROCESS Java Price Process
+-     Start time: 2024-06-27 12:00:00.060562+00:00
+-     Version: 2757
+-     Command line: ['./build/app/java_process', '--market', 'US']
 
 >>>>>>>>>> a report has been reported <<<<<<<<<<
