@@ -46,22 +46,25 @@ class DailyCountAnalyzer(analyzer.Analyzer):
         all_report_messages.extend(self.format_report(self.info_counts, "info"))
         all_report_messages.extend(self.format_report(self.warning_counts, "warning"))
         all_report_messages.extend(self.format_report(self.error_counts, "error"))
-        out_stream.write("\n".join(all_report_messages))
+        if all_report_messages:
+            out_stream.write("\n".join(all_report_messages))
+        else:
+            out_stream.write("There has been no daily increase in specific types of messages for any service")
 
     @staticmethod
     def format_report(dictionary, level):
         report_messages = []
         for service in dictionary:
-            report_messages.append(f"Daily increases in {level} log message for {service}:")
+            difference_messages = []
             sorted_days = sorted(dictionary[service])
             for previous_day_index, day in enumerate(sorted_days[1:]):
                 previous_day = sorted_days[previous_day_index]
                 difference = dictionary[service][day] - dictionary[service][previous_day]
                 if difference > 0:
-                    report_messages.append(
+                    difference_messages.append(
                         f"- On {day}, the number of {level} messages increased by {difference} from the previous day"
                     )
-        filtered_report_messages = []
-        if len(report_messages) > len(dictionary):
-            filtered_report_messages.extend(report_messages)
-        return filtered_report_messages
+            if difference_messages:
+                report_messages.append(f"Daily increases in {level} log message for {service}:")
+                report_messages.extend(difference_messages)
+        return report_messages

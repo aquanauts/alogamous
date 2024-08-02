@@ -158,7 +158,7 @@ STARTING Tracking service
     for line in in_stream.splitlines():
         comparer.read_log_line(line)
     comparer.report(out_stream)
-    assert out_stream.getvalue() == ""
+    assert out_stream.getvalue() == "There has been no daily increase in specific types of messages for any service"
 
 
 def test_other_format():
