@@ -16,7 +16,6 @@ class FlagDuplicateLogMessages(analyzer.Analyzer):
     def report(self, out_stream):
         if len(self.duplicateMessages) > 0:
             out_stream.write("Duplicate Log Messages:\n")
-            for message in self.duplicateMessages:
-                out_stream.write(f"{message}\n")
+            out_stream.write("\n".join(self.duplicateMessages))
         else:
-            out_stream.write("No duplicate log messages\n")
+            out_stream.write("No duplicate log messages")
