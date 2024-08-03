@@ -1,0 +1,18 @@
+====================================================
+STARTING PROCESS Java Price Process
+    Start time: 2024-06-27 12:00:00.060562+00:00
+    Version: 2757
+    Command line: ['./build/app/java_process', '--market', 'US']
+====================================================
+2024-06-27T12:00:00.460+0000 [main] INFO com.app.java_process.info - Starting with config Config{hostName='host'services='[JAVA_PRICE_PROCESS]'}
+2024-06-27T12:00:00.693+0000 [main] INFO com.app.java_process.info - Reading from kafka servers brokers:9092
+2024-06-27T12:00:00.745+0000 [main] INFO com.app.java_process.info - Reading topic java_topic from kafka servers brokers:9092
+2024-06-27T12:00:00.745+0000 [main] INFO com.app.java_process.info - Reading messages for 2024-06-27
+2024-06-27T12:00:00.773+0000 [main] INFO com.app.java_process.info - Writing to topic bosun_internal to kafka servers brokers:9092
+2024-06-27T12:00:00.777+0000 [main] INFO com.app.java_process.info - Writing to topic sip_last_trade_px to kafka servers brokers:9092
+2024-06-27T12:00:00.982+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] WARN com.app.java_process.info - KafkaReader found no data on topic java_topic. This will only log once.
+2024-06-27T12:00:01.200+0000 [Service thread for com.app.java_process.kafka.KafkaReader@1cf6d1be] INFO com.app.java_process.info - Starting KafkaReader at offset 1005022
+2024-06-27T12:51:04.418+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] INFO com.app.java_process.info - Starting KafkaReader at offset 28181084
+2024-06-27T20:00:26.953+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27ER995. Only publishing externally.
+2024-06-27T20:00:26.980+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 344232AS7. Only publishing externally.
+2024-06-27T20:00:26.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3393DS8. Only publishing externally.
