@@ -39,7 +39,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
     analyzer.analyze_log_stream(
         [
             # echo_analyzer.EchoAnalyzer(),
-            error_counter_analyzer.ErrorCounterAnalyzer(),
+            error_counter_analyzer.ErrorCounterAnalyzer(line_parser),
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
             format_analyzer.FormatAnalyzer(line_parser),
