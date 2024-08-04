@@ -1,10 +1,13 @@
 import io
 
-from alogamous import warning_analyzer
+from alogamous import log_line_parser, warning_analyzer
 
 
 def test_warning_count():
-    counter = warning_analyzer.WarningAnalyzer()
+    parser = log_line_parser.LogLineParser(
+        ["datetime", "source", "level", "message"], " - ", "===================================================="
+    )
+    counter = warning_analyzer.WarningAnalyzer(parser)
     in_stream = io.StringIO("""2024-06-20 11:00:18,185 - root - INFO - Kafka reading from start of day 2024-06-20 05:00:00+00:00 on topic internal from kafka.servers:9092
 2024-06-20 11:00:19,328 - root - INFO - Kafka source starting for topic internal at current offset 7924032 end offset 7928950 on servers kafka.servers:9092
 2024-06-20 11:00:22,329 - root - INFO - Kafka topic internal is caught up at offset 7928949

@@ -10,7 +10,7 @@ class InfoAnalyzer(analyzer.Analyzer):
     def read_log_line(self, line):
         parsed_line = self.parser.parse(line)
         line_type = parsed_line["type"]
-        if line_type == LineType.LOG_LINE and parsed_line["log_level"].lower() == "info":
+        if line_type == LineType.LOG_LINE and parsed_line["level"].lower() == "info":
             self.infomessage_counter += 1
 
     def report(self, out_stream):
