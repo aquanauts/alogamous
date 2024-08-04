@@ -2,6 +2,7 @@ import sys
 
 from alogamous import (
     analyzer,
+    daily_count_analyzer,
     directory_reader,
     error_counter_analyzer,
     flag_duplicate_log_messages,
@@ -10,7 +11,6 @@ from alogamous import (
     log_line_parser,
     loginfo_analyzer,
     stack_trace_analyzer,
-    startup_header_analyzer,
     warning_analyzer,
 )
 
@@ -39,14 +39,15 @@ with open(f"{sys.argv[3]}", "a") as output_file:
     analyzer.analyze_log_stream(
         [
             # echo_analyzer.EchoAnalyzer(),
-            error_counter_analyzer.ErrorCounterAnalyzer(line_parser),
+            daily_count_analyzer.DailyCountAnalyzer(line_parser),
+            error_counter_analyzer.ErrorCounterAnalyzer(),
             flag_duplicate_log_messages.FlagDuplicateLogMessages(),
             line_count_analyzer.LineCountAnalyzer(),
             format_analyzer.FormatAnalyzer(line_parser),
             loginfo_analyzer.InfoAnalyzer(line_parser),
             stack_trace_analyzer.StackTraceAnalyzer(line_parser),
-            startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
-            warning_analyzer.WarningAnalyzer(line_parser),
+            # startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
+            warning_analyzer.WarningAnalyzer(),
         ],
         reader.read(),
         output_file,
