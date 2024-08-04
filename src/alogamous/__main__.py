@@ -41,7 +41,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
             # echo_analyzer.EchoAnalyzer(),
             daily_count_analyzer.DailyCountAnalyzer(line_parser),
             error_counter_analyzer.ErrorCounterAnalyzer(line_parser),
-            flag_duplicate_log_messages.FlagDuplicateLogMessages(),
+            flag_duplicate_log_messages.FlagDuplicateLogMessages(line_parser),
             line_count_analyzer.LineCountAnalyzer(),
             format_analyzer.FormatAnalyzer(line_parser),
             loginfo_analyzer.InfoAnalyzer(line_parser),
