@@ -1,14 +1,14 @@
-from alogamous import analyzer
+from alogamous import analyzer, log_line_parser
 
 
 class WarningAnalyzer(analyzer.Analyzer):
-    def __init__(self):
+    def __init__(self, line_parser):
+        self.parser = line_parser
         self.count = 0
 
     def read_log_line(self, line):
-        line_list = line.split(" ")
-        # List should have format [date, timestamp, -, root, -, log message type, -, first word of message...]
-        if line_list[5].lower() == "warning":
+        parsed_line = self.parser.parse(line)
+        if parsed_line["type"] == log_line_parser.LineType.LOG_LINE and parsed_line["level"].lower().startswith("warn"):
             self.count += 1
 
     def report(self, out_stream):
