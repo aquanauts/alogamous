@@ -48,7 +48,10 @@ def test_no_errors():
     analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
     assert (
         out_stream.getvalue()
-        == "there are 7 peak time ranges: ['2024-06-20 11:00:18.115000 - 2024-06-20 11:00:18.116000', '2024-06-20 11:00:18.172000 - 2024-06-20 11:00:18.172000', '2024-06-20 11:00:22.329000 - 2024-06-20 11:00:22.329000', '2024-06-20 11:40:43.527000 - 2024-06-20 11:40:43.527000', '2024-06-20 11:40:43.529000 - 2024-06-20 11:40:43.529000', '2024-06-20 17:16:03.660000 - 2024-06-20 17:16:03.660000', '2024-06-20 17:24:34.091000 - 2024-06-20 17:24:34.092000']"
+        == "there are 7 peak time ranges: ['2024-06-20 11:00:18.115000 - 2024-06-20 11:00:18.116000', '2024-06-20 11:00:18.172000 - 2024-06-20 11:00:18.172000', '2024-06-20 11:00:22.329000 - 2024-06-20 11:00:22.329000', '2024-06-20 11:40:43.527000 - 2024-06-20 11:40:43.527000', '2024-06-20 11:40:43.529000 - 2024-06-20 11:40:43.529000', '2024-06-20 17:16:03.660000 - 2024-06-20 17:16:03.660000', '2024-06-20 17:24:34.091000 - 2024-06-20 17:24:34.092000']\n"
+        "\n"
+        "------ a report has been reported ------\n"
+        "\n"
     )
 
 
@@ -63,18 +66,24 @@ Command line: ['.venv/bin/python3', '-m', 'app.tracking_service', '--market', 'U
 """)
     out_stream = io.StringIO()
     analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
-    assert out_stream.getvalue().strip() == "there are 0 peak time ranges: []"
+    assert (
+        out_stream.getvalue().strip() == "there are 0 peak time ranges: []\n\n------ a report has been reported ------"
+    )
 
 
 def test_one_line():
     in_stream = io.StringIO("2024-06-20 11:40:01,000 - root - WARNING - Could not find instrument for sedol UY29387")
     out_stream = io.StringIO()
     analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
-    assert out_stream.getvalue().strip() == "there are 0 peak time ranges: []"
+    assert (
+        out_stream.getvalue().strip() == "there are 0 peak time ranges: []\n\n------ a report has been reported ------"
+    )
 
 
 def test_no_lines():
     in_stream = io.StringIO("")
     out_stream = io.StringIO()
     analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
-    assert out_stream.getvalue().strip() == "there are 0 peak time ranges: []"
+    assert (
+        out_stream.getvalue().strip() == "there are 0 peak time ranges: []\n\n------ a report has been reported ------"
+    )
