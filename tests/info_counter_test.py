@@ -5,7 +5,7 @@ from alogamous.loginfo_analyzer import InfoAnalyzer
 
 
 def test_report():
-    infomessage_counter = InfoAnalyzer(LogLineParser(["log_level", "message"], ":", "HEADER"))
+    infomessage_counter = InfoAnalyzer(LogLineParser(["level", "message"], ":", "HEADER"))
     out_stream = io.StringIO()
 
     infomessage_counter.read_log_line("HEADER")
@@ -20,7 +20,7 @@ def test_report():
 
 
 def test_capital_info():
-    infomessage_counter = InfoAnalyzer(LogLineParser(["log_level", "message"], ":", "HEADER"))
+    infomessage_counter = InfoAnalyzer(LogLineParser(["level", "message"], ":", "HEADER"))
     out_stream = io.StringIO()
 
     infomessage_counter.read_log_line("Info: line 1")
@@ -33,7 +33,7 @@ def test_capital_info():
 
 
 def test_report_mixedlines():
-    infomessage_counter = InfoAnalyzer(LogLineParser(["log_level", "message"], ":", "HEADER"))
+    infomessage_counter = InfoAnalyzer(LogLineParser(["level", "message"], ":", "HEADER"))
     out_stream = io.StringIO()
 
     infomessage_counter.read_log_line("info: line 1")
@@ -46,7 +46,7 @@ def test_report_mixedlines():
 
 
 def test_report_without_info_messages():
-    infomessage_counter = InfoAnalyzer(LogLineParser(["log_level", "message"], ":", "HEADER"))
+    infomessage_counter = InfoAnalyzer(LogLineParser(["level", "message"], ":", "HEADER"))
     out_stream = io.StringIO()
 
     infomessage_counter.read_log_line("Warning: line 1")
@@ -59,7 +59,7 @@ def test_report_without_info_messages():
 
 
 def test_no_imput_lines():
-    infomessage_counter = InfoAnalyzer(LogLineParser(["log_level", "message"], ":", "HEADER"))
+    infomessage_counter = InfoAnalyzer(LogLineParser(["level", "message"], ":", "HEADER"))
     out_stream = io.StringIO()
 
     infomessage_counter.report(out_stream)

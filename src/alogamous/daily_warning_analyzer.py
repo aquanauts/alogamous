@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import datetime
 
 from alogamous import analyzer, log_line_parser
