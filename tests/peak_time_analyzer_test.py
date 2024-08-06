@@ -4,8 +4,7 @@ from alogamous import analyzer, peak_time_analyzer
 
 
 def test_no_errors():
-    in_stream = io.StringIO(
-        """2024-06-20 11:00:17,983 - root - INFO - Adding subscription for pid None
+    in_stream = io.StringIO(""""2024-06-20 11:00:17,983 - root - INFO - Adding subscription for pid None
 2024-06-20 11:00:18,115 - root - INFO - Initialized Influx DB Client to host
 2024-06-20 11:00:18,115 - root - INFO - Scheduling Error Handler in 150.0 seconds
 2024-06-20 11:00:18,116 - root - INFO - prometheus client http server running
@@ -42,16 +41,12 @@ def test_no_errors():
 2024-06-20 17:17:04,278 - root - INFO - Updating prices
 2024-06-20 17:24:34,091 - root - INFO - Closing client connection.
 2024-06-20 17:24:34,092 - root - INFO - Client (0)ui-tracking_service Closed
-2024-06-20 17:25:08,029 - root - ERROR - Exception in message handler <bound method TrackingService.method of <app.tracking_service."""
-    )
+2024-06-20 17:25:08,029 - root - ERROR - Exception in message handler <bound method TrackingService.method of <app.tracking_service.""")
     out_stream = io.StringIO()
     analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
     assert (
-        out_stream.getvalue()
-        == "there are 7 peak time ranges: ['2024-06-20 11:00:18.115000 - 2024-06-20 11:00:18.116000', '2024-06-20 11:00:18.172000 - 2024-06-20 11:00:18.172000', '2024-06-20 11:00:22.329000 - 2024-06-20 11:00:22.329000', '2024-06-20 11:40:43.527000 - 2024-06-20 11:40:43.527000', '2024-06-20 11:40:43.529000 - 2024-06-20 11:40:43.529000', '2024-06-20 17:16:03.660000 - 2024-06-20 17:16:03.660000', '2024-06-20 17:24:34.091000 - 2024-06-20 17:24:34.092000']\n"
-        "\n"
-        "------ a report has been reported ------\n"
-        "\n"
+        out_stream.getvalue().strip()
+        == "there are 7 peak time ranges: ['2024-06-20 11:00:18.115000 - 2024-06-20 11:00:18.116000', '2024-06-20 11:00:18.172000 - 2024-06-20 11:00:18.172000', '2024-06-20 11:00:22.329000 - 2024-06-20 11:00:22.329000', '2024-06-20 11:40:43.527000 - 2024-06-20 11:40:43.527000', '2024-06-20 11:40:43.529000 - 2024-06-20 11:40:43.529000', '2024-06-20 17:16:03.660000 - 2024-06-20 17:16:03.660000', '2024-06-20 17:24:34.091000 - 2024-06-20 17:24:34.092000']\n\n------ a report has been reported ------"
     )
 
 
