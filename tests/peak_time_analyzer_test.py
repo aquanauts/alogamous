@@ -3,7 +3,7 @@ import io
 from alogamous import analyzer, peak_time_analyzer
 
 
-def test_no_errors():
+def test_no_errors_type1():
     in_stream = io.StringIO(""""2024-06-20 11:00:17,983 - root - INFO - Adding subscription for pid None
 2024-06-20 11:00:18,115 - root - INFO - Initialized Influx DB Client to host
 2024-06-20 11:00:18,115 - root - INFO - Scheduling Error Handler in 150.0 seconds
@@ -47,6 +47,33 @@ def test_no_errors():
     assert (
         out_stream.getvalue().strip()
         == "there are 7 peak time ranges: ['2024-06-20 11:00:18.115000 - 2024-06-20 11:00:18.116000', '2024-06-20 11:00:18.172000 - 2024-06-20 11:00:18.172000', '2024-06-20 11:00:22.329000 - 2024-06-20 11:00:22.329000', '2024-06-20 11:40:43.527000 - 2024-06-20 11:40:43.527000', '2024-06-20 11:40:43.529000 - 2024-06-20 11:40:43.529000', '2024-06-20 17:16:03.660000 - 2024-06-20 17:16:03.660000', '2024-06-20 17:24:34.091000 - 2024-06-20 17:24:34.092000']\n\n------ a report has been reported ------"
+    )
+
+
+def test_no_errors_type2():
+    in_stream = io.StringIO("""2024-06-27T01:00:00.982+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] WARN com.app.java_process.info - KafkaReader found no data on topic java_topic. This will only log once.
+2024-06-27T02:00:01.200+0000 [Service thread for com.app.java_process.kafka.KafkaReader@1cf6d1be] INFO com.app.java_process.info - Starting KafkaReader at offset 1005022
+2024-06-27T02:00:02.418+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] INFO com.app.java_process.info - Starting KafkaReader at offset 28181084
+2024-06-27T02:00:02.953+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27ER995. Only publishing externally.
+2024-06-27T02:00:02.980+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 344232AS7. Only publishing externally.
+2024-06-27T02:00:02.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3393DS8. Only publishing externally.
+2024-06-27T03:00:03.982+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] WARN com.app.java_process.info - KafkaReader found no data on topic java_topic. This will only log once.
+2024-06-27T04:00:04.200+0000 [Service thread for com.app.java_process.kafka.KafkaReader@1cf6d1be] INFO com.app.java_process.info - Starting KafkaReader at offset 1005022
+2024-06-27T05:51:05.418+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] INFO com.app.java_process.info - Starting KafkaReader at offset 28181084
+2024-06-27T06:00:06.953+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27ER995. Only publishing externally.
+2024-06-27T07:00:07.980+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 344232AS7. Only publishing externally.
+2024-06-27T08:00:08.981+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 3393DS8. Only publishing externally.
+2024-06-27T09:00:00.982+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] WARN com.app.java_process.info - KafkaReader found no data on topic java_topic. This will only log once.
+2024-06-27T10:00:01.200+0000 [Service thread for com.app.java_process.kafka.KafkaReader@1cf6d1be] INFO com.app.java_process.info - Starting KafkaReader at offset 1005022
+2024-06-27T11:51:04.418+0000 [Service thread for com.app.java_process.kafka.KafkaReader@446a1e84] INFO com.app.java_process.info - Starting KafkaReader at offset 28181084
+2024-06-27T12:00:26.953+0000 [Service thread for com.app.java_process.services.ServiceRunner@33ecda92] WARN com.app.java_process.info - Could not find symbol for sedol 27ER995. Only publishing externally.
+    """)
+    out_stream = io.StringIO()
+    analyzer.analyze_log_stream([peak_time_analyzer.PeakTimeAnalyzer()], in_stream, out_stream)
+    assert (
+        out_stream.getvalue().strip() == "there are 2 peak time ranges: ['2024-06-27 02:00:02.418000+00:00 - "
+        "2024-06-27 02:00:02.980000+00:00', '2024-06-27 02:00:02.953000+00:00 - "
+        "2024-06-27 02:00:02.981000+00:00']\n\n------ a report has been reported ------"
     )
 
 

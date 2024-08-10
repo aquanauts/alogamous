@@ -1,11 +1,10 @@
 import statistics
-from abc import ABC
 from datetime import datetime
 
 from alogamous import analyzer
 
 
-class PeakTimeAnalyzer(analyzer.Analyzer, ABC):
+class PeakTimeAnalyzer(analyzer.Analyzer):
     def __init__(self):
         self.d = {}
         self.peaktimes = []
@@ -15,12 +14,18 @@ class PeakTimeAnalyzer(analyzer.Analyzer, ABC):
         self.lines_to_delete = []
 
     def read_log_line(self, line):
-        timestamp = line.split(" - ")[0]
         try:
+            timestamp = str(line.split(" - ")[0]).replace(",", ".")
             timestamp = datetime.fromisoformat(timestamp)
             self.timestamps.append(timestamp)
         except ValueError:
-            del timestamp
+            try:
+                timestamp = str(line.split(" [")[0])
+                timestamp = timestamp.replace("0000", "00:00")
+                timestamp = datetime.fromisoformat(timestamp)
+                self.timestamps.append(timestamp)
+            except ValueError:
+                del timestamp
 
     def report(self, out_stream):
         for i in range(len(self.timestamps) - 1):
