@@ -10,6 +10,7 @@ from alogamous import (
     line_count_analyzer,
     log_line_parser,
     loginfo_analyzer,
+    peak_time_analyzer,
     stack_trace_analyzer,
     warning_analyzer,
 )
@@ -47,6 +48,7 @@ with open(f"{sys.argv[3]}", "a") as output_file:
             loginfo_analyzer.InfoAnalyzer(line_parser),
             stack_trace_analyzer.StackTraceAnalyzer(line_parser),
             # startup_header_analyzer.StartupHeaderAnalyzer(line_parser),
+            peak_time_analyzer.PeakTimeAnalyzer(),
             warning_analyzer.WarningAnalyzer(line_parser),
         ],
         reader.read(),
